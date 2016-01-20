@@ -71,6 +71,8 @@ propTest.number = {
 }
 
 function propTest.makeArrayGenerator(elementGenerator, options)
+  options = options or {}
+  
   local function generate(size)
     options.length = options.length or random() * size;
     local result = {}
