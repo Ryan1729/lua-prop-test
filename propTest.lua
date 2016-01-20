@@ -1,4 +1,5 @@
 -- partially based on https://github.com/shamrin/bigcheck
+local abs = math.abs
 local floor = math.floor
 local random = math.random
 
@@ -36,7 +37,20 @@ propTest.integer = {
     if random() < bias then
       return 0
     else
-      return floor(value * betweenMinus1And1())
+      return floor(value * random())
+    end
+  end,
+}
+
+propTest.nonNegativeInteger = {
+  generate = function (size) 
+    return floor(abs(size) * random());
+  end,
+  shrink = function (value, bias) 
+    if random() < bias then
+      return 0
+    else
+      return floor(value * random())
     end
   end,
 }
