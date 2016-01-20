@@ -28,7 +28,7 @@ local function isInteger(n)
   return n == floor(n)
 end
 
-local integer = {
+propTest.integer = {
   generate = function (size) 
     return floor(size * betweenMinus1And1());
   end,
@@ -41,13 +41,13 @@ local integer = {
   end,
 }
 
-local number = {
+propTest.number = {
   generate = function (size) 
     return size * betweenMinus1And1()
   end,
   shrink = function (value, bias) 
     if isInteger(value) then
-      return integer.shrink(value, bias);
+      return propTest.integer.shrink(value, bias);
     elseif random() < bias then
       return floor(value)
     else
