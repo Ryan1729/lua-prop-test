@@ -185,10 +185,4 @@ function propTest.check(property, generator, options)
   }
 end
 
---^ check that returs a table
-
---TODO: check that returns a boolean
---check that returns a string
---check that throughs failure as error?
-
-      return propTest
+return propTest
