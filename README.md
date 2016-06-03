@@ -88,3 +88,5 @@ You can also make generators that create new types of values, starting from the 
   * Add string generator
   
   * Document all functions with options reference
+
+  * Give brief definition of property based testing
